@@ -2,6 +2,9 @@
 import { reactive, ref } from 'vue'
 const ruleFormRef = ref()
 import { checkAccountPassword } from "./utils.js"
+import { ElMessage } from 'element-plus'
+
+
 const validatePass = (rule, value, callback) => {
   if (value === '') {
     callback(new Error('请输入密码，不可为空'))
@@ -37,9 +40,8 @@ const submitForm = (formEl) => {
 
       // 调用登录接口， 登录成功跳转到其他页面，登录失败提示账号或者密码不对
 
-      checkAccountPassword(values.account, values.pass);
-
-
+      const checkResult = checkAccountPassword(values.account, values.pass);
+      ElMessage(checkResult)
     } else {
       console.log('error submit!')
       return false
