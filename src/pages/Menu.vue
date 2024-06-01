@@ -1,0 +1,50 @@
+<template>
+    <el-row class="tac">
+        <el-col :span="3" class="menu-panel">
+            <h5 class="mb-2">GREEN BIN 管理平台</h5>
+            <el-menu active-text-color="#ffd04b" background-color="#545c64" text-color="#fff" class="el-menu-custom">
+                <el-menu-item index="1">
+                    <el-icon>
+                        <User />
+                    </el-icon>
+                    <span>员工管理</span>
+                </el-menu-item>
+                <el-menu-item index="2">
+                    <el-icon>
+                        <document />
+                    </el-icon>
+                    <span>订单管理</span>
+                </el-menu-item>
+            </el-menu>
+        </el-col>
+    </el-row>
+</template>
+
+
+
+<script lang="js" setup>
+import {
+    Document,
+    Menu as IconMenu,
+    Location,
+    Setting,
+    User,
+} from '@element-plus/icons-vue'
+
+</script>
+
+<style scoped>
+.menu-panel {
+    padding: 8px;
+    background: #545c64;
+    min-height: 600px;
+}
+
+.mb-2 {
+    color: #fff
+}
+
+.el-menu-custom {
+    border-right: none;
+}
+</style>
