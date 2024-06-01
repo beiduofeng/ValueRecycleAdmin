@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!-- 整个应用（网站）的入口 -->
+<!-- spa sing page application 单页应用（网站，vue react）单页指的是入口只有一个 html 
+页面上具体的 dom 从哪里来的，js 通过 dom api 操作页面-，框架通过 dom api 创建的 -->
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>valueRecycleAdmin</title>
+</head>
+
+<body>
+  <div id="app-container"></div>、
+  <!-- 通过 script 标签引入 main.js -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

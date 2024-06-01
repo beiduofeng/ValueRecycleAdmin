@@ -1,11 +1,17 @@
+/**
+ * 判断账号密码是否正确
+ * @param {string} account 账号
+ * @param {string} password 密码
+ * @returns 
+ */
 export function checkAccountPassword(account, password) {
-    //return account == 111111 && password == 222222 ? true : false
-    console.log(account, password);
+    // 定义三组账号密码
     const accounts = [
         { account: "111111", password: "121212" },
         { account: "222222", password: "111111" },
         { account: "333333", password: "313131" }
     ];
+    // 用户输入的账号在三组账号中匹配是否存在
     let MathAccount = accounts.find(item => item.account === account)
     if (!MathAccount) {
         return {

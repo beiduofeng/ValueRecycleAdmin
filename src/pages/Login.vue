@@ -3,8 +3,13 @@ import { reactive, ref } from 'vue'
 const ruleFormRef = ref()
 import { checkAccountPassword } from "./utils.js"
 import { ElMessage } from 'element-plus'
-
-
+/**
+ * 校验输入的密码是否合法
+ * @param rule 
+ * @param value 字符串 输入的密码 
+ * @param callback element-plus 框架提供的，用来抛出异常或者通过
+ * @returns void
+ */
 const validatePass = (rule, value, callback) => {
   if (value === '') {
     callback(new Error('请输入密码，不可为空'))
@@ -12,7 +17,12 @@ const validatePass = (rule, value, callback) => {
     callback()
   }
 }
-
+/**
+ * 校验输入的账号是否为空
+ * @param rule 
+ * @param value 字符串  账号
+ * @param callback element-plus 框架提供的，用来抛出异常或者通过
+ */
 const accountValidate = (rule, value, callback) => {
   if (value === '' || !value) {
     callback(new Error('请输入账号，不可为空'))
@@ -21,6 +31,7 @@ const accountValidate = (rule, value, callback) => {
   }
 }
 
+// ?
 const ruleForm = reactive({
   pass: '',
   account: '',
@@ -36,10 +47,7 @@ const submitForm = (formEl) => {
   formEl.validate((valid) => {
     if (valid) {
       const values = { ...ruleForm }
-      console.log('submit!, ruleForm', values);
-
       // 调用登录接口， 登录成功跳转到其他页面，登录失败提示账号或者密码不对
-
       const checkResult = checkAccountPassword(values.account, values.pass);
       ElMessage(checkResult)
     } else {

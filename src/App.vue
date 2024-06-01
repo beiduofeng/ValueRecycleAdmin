@@ -1,7 +1,6 @@
 <script>
 import Login from "./pages/Login.vue"
 
-
 export default {
   components: {
     Login
@@ -11,9 +10,7 @@ export default {
 </script>
 
 <template>
-  <Login/>
+  <Login />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
