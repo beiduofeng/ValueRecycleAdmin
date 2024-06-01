@@ -42,6 +42,10 @@ const rules = reactive({
   account: [{ validator: accountValidate, trigger: 'blur' }],
 })
 
+/**
+ * 提交表单
+ * @param formEl form 实例
+ */
 const submitForm = (formEl) => {
   if (!formEl) return
   formEl.validate((valid) => {
@@ -50,6 +54,12 @@ const submitForm = (formEl) => {
       // 调用登录接口， 登录成功跳转到其他页面，登录失败提示账号或者密码不对
       const checkResult = checkAccountPassword(values.account, values.pass);
       ElMessage(checkResult)
+      // 职责单一 single duty
+      if (checkResult.type === 'success') {
+        // 跳转到其他页面
+        // 路由
+        window.location.hash = ""
+      }
     } else {
       console.log('error submit!')
       return false
