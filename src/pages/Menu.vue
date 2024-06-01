@@ -1,6 +1,6 @@
 <template>
-    <el-row class="tac">
-        <el-col :span="3" class="menu-panel">
+    <el-row>
+        <el-col :span="24" class="menu-panel">
             <h5 class="mb-2">GREEN BIN 管理平台</h5>
             <el-menu active-text-color="#ffd04b" background-color="#545c64" text-color="#fff" class="el-menu-custom">
                 <el-menu-item index="1">
@@ -11,7 +11,7 @@
                 </el-menu-item>
                 <el-menu-item index="2">
                     <el-icon>
-                        <document />
+                        <Document />
                     </el-icon>
                     <span>订单管理</span>
                 </el-menu-item>
@@ -20,14 +20,9 @@
     </el-row>
 </template>
 
-
-
 <script lang="js" setup>
 import {
     Document,
-    Menu as IconMenu,
-    Location,
-    Setting,
     User,
 } from '@element-plus/icons-vue'
 
