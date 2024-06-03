@@ -8,7 +8,8 @@
                 <Header />
             </el-row>
             <el-row class="content">
-                contents
+            <!-- 路由器检测到后在此展示检测到的组件内容 -->
+                <RouterView></RouterView>
             </el-row>
         </el-col>
     </el-row>
@@ -18,7 +19,7 @@
 <script lang="js" setup>
 import Menu from './Menu.vue'
 import Header from './Header.vue'
-
+import {RouterView} from 'vue-router'
 </script>
 
 <style scoped>

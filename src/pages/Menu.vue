@@ -7,13 +7,13 @@
                     <el-icon>
                         <User />
                     </el-icon>
-                    <span>员工管理</span>
+                    <a RouterLink to="/worker"><span>员工管理</span></a>
                 </el-menu-item>
                 <el-menu-item index="2">
                     <el-icon>
                         <Document />
                     </el-icon>
-                    <span>订单管理</span>
+                   <a RouterLink to="/order"> <span>订单管理</span></a>
                 </el-menu-item>
             </el-menu>
         </el-col>
@@ -25,7 +25,7 @@ import {
     Document,
     User,
 } from '@element-plus/icons-vue'
-
+import {RouterView,RouterLink} from 'vue-router'
 </script>
 
 <style scoped>

@@ -2,6 +2,7 @@
 import { reactive, ref } from 'vue'
 const ruleFormRef = ref()
 import { checkAccountPassword } from "./utils.js"
+import { saveAccount } from "./utils.js"
 import { ElMessage } from 'element-plus'
 /**
  * 校验输入的密码是否合法
@@ -56,6 +57,7 @@ const submitForm = (formEl) => {
       ElMessage(checkResult)
       // 职责单一 single duty
       if (checkResult.type === 'success') {
+        saveAccount(values.account)
         // 跳转到其他页面
         // 路由
         window.location.hash = ""

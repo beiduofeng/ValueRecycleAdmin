@@ -32,3 +32,7 @@ export function checkAccountPassword(account, password) {
         }
     }
 }
+export function saveAccount(x) {
+    window.userId = x;
+    return undefined;
+}

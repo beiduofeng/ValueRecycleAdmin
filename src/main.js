@@ -4,12 +4,14 @@ import { createApp } from 'vue'
 // 参考 element-puls 文档 https://element-plus.org/zh-CN/guide/quickstart.html
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+// 引入路由器
 import router from './router.js'
 // vue app
 import App from './App.vue'
 
 const app = createApp(App)
 app.use(ElementPlus)
+// 使用路由器
 app.use(router)
 // 挂载应用到页面上
 app.mount('#app-container')

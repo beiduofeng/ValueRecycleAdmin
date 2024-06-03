@@ -1,15 +1,12 @@
 <template>
     <div class="header">
-        <span class="span=left">头像</span>
+        <span class="span=left">{{ userId }}</span>
         <span class="span-right">账号</span>
     </div>
 </template>
 
 <script lang="js" setup>
-import {
-    Document,
-    User,
-} from '@element-plus/icons-vue'
+const userId = window.userId
 
 </script>
 
